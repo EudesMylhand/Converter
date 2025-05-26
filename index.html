@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertisseur Texte vers CSV</title>
+      <link rel="stylesheet" href="style_module.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Convertisseur Texte vers CSV</h1>
+        
+        <div id="drop-zone">
+            <div class="drop-content">
+                <p>Glissez-déposez votre fichier texte ici</p>
+                <span>ou</span>
+                <input type="file" id="file-input" accept=".txt">
+                <label for="file-input" class="btn">Sélectionner un fichier</label>
+            </div>
+        </div>
+        
+        <div class="conversion-options">
+            <h3>Options de conversion</h3>
+            <div class="option">
+                <label for="delimiter">Séparateur CSV:</label>
+                <select id="delimiter">
+                    <option value=",">Virgule (,)</option>
+                    <option value=";">Point-virgule (;)</option>
+                    <option value="\t">Tabulation</option>
+                    <option value="|">Pipe (|)</option>
+                </select>
+            </div>
+            <div class="option">
+                <label for="input-delimiter">Séparateur original:</label>
+                <select id="input-delimiter">
+                    <option value="\t">Tabulation</option>
+                    <option value=",">Virgule (,)</option>
+                    <option value=";">Point-virgule (;)</option>
+                    <option value="|">Pipe (|)</option>
+                    <option value=" ">Espace</option>
+                </select>
+            </div>
+            <div class="option">
+                <input type="checkbox" id="has-header">
+                <label for="has-header">Première ligne comme en-tête</label>
+            </div>
+            <button id="convert-btn" class="btn" disabled>Convertir</button>
+        </div>
+        
+        <div id="results" class="hidden">
+            <h3>Résultats</h3>
+            <div id="file-info"></div>
+            <div id="preview"></div>
+            <button id="download-btn" class="btn">Télécharger le CSV</button>
+        </div>
+        
+        <div id="status"></div>
+    </div>
+
+    <script src="script_module.js"> </script>
+</body>
+</html>
