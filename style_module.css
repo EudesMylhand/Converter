@@ -156,3 +156,45 @@
         background-color: #f8d7da;
         color: #721c24;
     }
+
+
+    /* Mise à jour colunm */
+
+    .headers-section {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f0f8ff;
+    border-radius: 5px;
+}
+
+.header-fields-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.header-field {
+    margin-bottom: 10px;
+}
+
+.header-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.header-field input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#detect-cols-btn {
+    background-color: #2ecc71;
+}
+
+#detect-cols-btn:hover {
+    background-color: #27ae60;
+}
