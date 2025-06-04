@@ -138,10 +138,15 @@
             const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
             const url = URL.createObjectURL(blob);
             const link = document.createElement('a');
-            
+
+            // Normalisation de l'extension pour le nom de fichier de sortie
+            const outputName = currentFile.name.toLowerCase().endsWith('.txt') 
+            ? currentFile.name.slice(0, -4) + '.csv'
+            : currentFile.name + '.csv';
+
             link.setAttribute('href', url);
-            link.setAttribute('download', currentFile.name.replace('.txt', '.csv') || 'converted.csv');
-            link.style.display = 'none';
+            link.setAttribute('download', outputName);
+             link.style.display = 'none';
             
             document.body.appendChild(link);
             link.click();
