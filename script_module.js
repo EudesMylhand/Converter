@@ -66,7 +66,8 @@
             const file = files[0];
             
             // Vérification du type de fichier
-            if (!file.name.endsWith('.txt') && !file.type.match('text.*')) {
+             // Vérification du type de fichier avec normalisation de casse
+            if (!file.name.toLowerCase().endsWith('.txt') && !file.type.match('text.*')) {
                 showStatus('Veuillez sélectionner un fichier texte (.txt)', 'error');
                 return;
             }
